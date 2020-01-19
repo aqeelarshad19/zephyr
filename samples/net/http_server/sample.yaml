@@ -1,0 +1,14 @@
+sample:
+  name: http server based on FXOS8700 Accelerometer/Magnetometer Sensor
+tests:
+  sample.net.http_server:
+    harness: sensor
+    platform_whitelist: frdm_k64f
+    tags: sensors
+    depends_on: i2c gpio
+    extra_configs:
+      - CONFIG_FXOS8700_PULSE=y
+      - CONFIG_FXOS8700_PULSE_INT1=y
+      - CONFIG_FXOS8700_MOTION=y
+      - CONFIG_FXOS8700_MOTION_INT1=y
+      - CONFIG_FXOS8700_PM_LOW_POWER=y
